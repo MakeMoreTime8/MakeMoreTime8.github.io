@@ -1,0 +1,106 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+ul, ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+img {
+    display: block;
+}
+
+body {
+    background-color: #ccc;
+}
+ .container {
+    height: 650px;
+    position: relative;
+    overflow: hidden;
+ }
+
+ul li {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    height: 650px; 
+}
+
+ul li:first-of-type {
+    z-index: 1;
+}
+
+ul li a {
+    height: 100%;
+}
+ul li a img {
+    height: 100%;
+}
+ul li a .left,
+ul li a .right {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-40%);
+    transition: transform .5s linear;
+}
+ul li a .left {
+    transform: translateY(-70%);
+}
+ul li.active .left,
+ul li.active .right {
+    transform: translateY(-50%);
+}
+ol {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 999;
+}
+
+ol li {
+    width: 40px;
+    height: 8px;
+    float: left;
+    margin: 0 10px;
+    /* background-color: rgba(255, 255, 255, .3); */
+    position: relative;
+    left: 0;
+    bottom: 0;
+}
+ol li span {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, .3);
+}
+ol li span i {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+ol li.current span {
+    height: 4px;
+}
+
+ol li.current span i {
+    animation: auto 4s linear forwards;
+}
+
+@keyframes auto {
+    100% {
+        width: 100%;
+    }
+}
+
